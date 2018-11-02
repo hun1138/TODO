@@ -15,6 +15,6 @@
 ### Check Django Version
 	python -m django --version
 ### Windows
-	pip install django
+	pip install django==2.1.3
 ### Linux
-	pip install django
+	pip install django==2.1.3
