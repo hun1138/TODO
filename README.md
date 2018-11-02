@@ -5,16 +5,16 @@
 		* Html : Html5
 ## Download Python
 ### Check Python Version
-	#### python --version
+	python --version
 ### Windows
-	#### https://www.python.org/
+	https://www.python.org/
 ### Linux
-	#### https://www.python.org/
+	https://www.python.org/
 
 ## Download Django
 ### Check Django Version
-	#### python -m django --version
+	python -m django --version
 ### Windows
-	#### pip install django
+	pip install django
 ### Linux
-	#### pip install django
+	pip install django
