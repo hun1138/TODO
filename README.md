@@ -18,3 +18,6 @@
 	pip install django==2.1.3
 ### Linux
 	pip install django==2.1.3
+
+## Run Server
+	python manage.py runserver
