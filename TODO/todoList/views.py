@@ -12,10 +12,11 @@ def index(request):
             todoForm.save()
     else:
         todoForm = TodoForm()
+        print(todoForm.as_p())
     todoList = Todo.objects.all()
     todoLen = len(todoList)
     context = {
-        'todoForm':todoForm,
+        #'todoForm':todoForm,
         'todoList':todoList,
         'todoLen':todoLen,
     }

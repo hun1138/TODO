@@ -5,7 +5,7 @@ from .models import Todo
 class TodoForm(forms.ModelForm):
     class Meta:
         model = Todo
-        fields = ['todo_title', 'todo_info']
+        fields = ['todo_title', 'todo_detail']
 '''
 class TodoForm(forms.Form):
     todo_title = forms.CharField(label='title', max_length=20)

@@ -1,11 +1,11 @@
 <div class="col">
-    <h2 class="text-center">TODO List</h2>
-
+<h2 class="text-center">TODO List</h2>
+<div class="col" style="overflow-y:scroll; height:80vh">
     {% for todo in todoList %}
     <div class="card">
         <div class="card-body">
             <h5 class="card-title">{{ todo.todo_title }}</h5>
-            <p class="card-text">{{ todo.todo_info }}</p>
+            <p class="card-text">{{ todo.todo_detail }}</p>
             <div class="text-right">
                 <a class="btn btn-info text-right" href="{% url 'todoList:detail' todo.id %}">detail</a>
             </div>
@@ -15,4 +15,5 @@
     <br>
     {% endif %}
     {% endfor %}
+</div>
 </div>
