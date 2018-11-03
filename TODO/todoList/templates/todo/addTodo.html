@@ -1,4 +1,6 @@
-<div>
+<div class="col">
+    <h2>Add TODO</h2>
+
     <form method="post" action="">
         {% csrf_token %}
         {{ todoForm.as_p }}
