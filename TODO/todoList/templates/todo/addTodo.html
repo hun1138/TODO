@@ -1,0 +1,8 @@
+<div>
+    <form method="post" action="">
+        {% csrf_token %}
+        {{ todoForm.as_p }}
+        <!-- <input type="date"> -->
+        <input type="submit" value="저장">
+    </form>
+</div>

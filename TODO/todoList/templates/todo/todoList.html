@@ -1,0 +1,13 @@
+<div>
+    {% for todo in todoList %}
+    <h3>{{ todo.created_at }}</h3>
+    <ul>
+        <li>
+            <a href="{% url 'todoList:detail' todo.id %}">{{ todo.todo_title }}</a>
+        </li>
+    </ul>
+    {% if forloop.counter < todoLen %}
+    <hr>
+    {% endif %}
+    {% endfor %}
+</div>

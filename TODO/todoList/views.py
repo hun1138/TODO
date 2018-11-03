@@ -1,4 +1,5 @@
 from django.shortcuts import render, get_object_or_404
+from django.views import generic
 
 from .models import Todo
 from .forms import TodoForm
@@ -18,11 +19,8 @@ def index(request):
         'todoList':todoList,
         'todoLen':todoLen,
     }
-    return render(request, 'index.html', context)
+    return render(request, 'todo/index.html', context)
 
-def detail(request, todo_id):
-    todo = get_object_or_404(Todo, pk=todo_id)
-    context = {
-        'todo':todo,
-    }
-    return render(request, 'detail.html', context)
+class DetailView(generic.DetailView):
+    model = Todo
+    template_name = 'todo/detail.html'
