@@ -1,10 +1,10 @@
 <div class="col">
-    <h2>Add TODO</h2>
+    <h2 class="text-center">Add TODO</h2>
 
     <form method="post" action="">
         {% csrf_token %}
         {{ todoForm.as_p }}
         <!-- <input type="date"> -->
-        <input type="submit" value="저장">
+        <button class="btn" type="submit">저장</button>
     </form>
 </div>
