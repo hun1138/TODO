@@ -1,6 +1,8 @@
 from django.shortcuts import render, get_object_or_404
 from django.views import generic
 
+import datetime
+
 from .models import Todo
 from .forms import TodoForm
 
@@ -8,15 +10,17 @@ from .forms import TodoForm
 def index(request):
     if request.method == 'POST':
         todoForm = TodoForm(request.POST)
+        #print(todoForm)
+        print(todoForm.data['todo_due_date'])
         if todoForm.is_valid():
             todoForm.save()
     else:
         todoForm = TodoForm()
-        print(todoForm.as_p())
+
     todoList = Todo.objects.all()
     todoLen = len(todoList)
     context = {
-        #'todoForm':todoForm,
+        'todoForm':todoForm,
         'todoList':todoList,
         'todoLen':todoLen,
     }
