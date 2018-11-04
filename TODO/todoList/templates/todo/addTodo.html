@@ -1,7 +1,7 @@
 <div class="col">
     <h2 class="text-center">Add</h2>
 
-    <form method="post" action="">
+    <form method="post" action="{% url 'todoList:index' %}">
         {% csrf_token %}
         <!--
         <div class="form-group">

@@ -49,6 +49,16 @@ def cancel(request, todo_id):
     todo.save()
     return HttpResponseRedirect(reverse('todoList:index'))
 
+def update(request, todo_id):
+    if request.method == 'POST':
+        todo = Todo.objects.get(id=todo_id)
+        todo.todo_title = request.POST['todo_title']
+        todo.todo_detail = request.POST['todo_detail']
+        todo.todo_due_date = request.POST['todo_due_date']
+        todo.save()
+        print('update')
+    return HttpResponseRedirect(reverse('todoList:index'))
+
 class DetailView(generic.DetailView):
     model = Todo
     template_name = 'todo/detail.html'
