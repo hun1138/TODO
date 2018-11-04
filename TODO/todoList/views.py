@@ -54,9 +54,9 @@ def update(request, todo_id):
         todo = Todo.objects.get(id=todo_id)
         todo.todo_title = request.POST['todo_title']
         todo.todo_detail = request.POST['todo_detail']
-        todo.todo_due_date = request.POST['todo_due_date']
+        if request.POST['todo_due_date'] == '':
+            todo.todo_due_date = None
         todo.save()
-        print('update')
     return HttpResponseRedirect(reverse('todoList:index'))
 
 class DetailView(generic.DetailView):

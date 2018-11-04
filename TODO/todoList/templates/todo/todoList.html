@@ -8,19 +8,18 @@
                 <p class="card-text">{{ todo.todo_detail }}</p>
                 <div class="text-right">
                     <a class="btn btn-success" href="{% url 'todoList:complete' todo.id %}">완료</a>
-                    <button type="button" class="btn btn-info" data-toggle="modal" data-target="#todoUpdateModal">
+                    <button type="button" class="btn btn-info" data-toggle="modal" data-target="#todoUpdateModal{{ todo.id }}">
                         수정
                     </button>
                     <a class="btn btn-danger" href="{% url 'todoList:delete' todo.id %}">삭제</a>
                 </div>
 
                 <!-- Modal -->
-                <div class="modal fade" id="todoUpdateModal" tabindex="-1" role="dialog"
-                     aria-labelledby="id_todo_ModalLabel" aria-hidden="true">
+                <div class="modal fade" id="todoUpdateModal{{ todo.id }}" tabindex="-1" role="dialog" aria-labelledby="id_todo_ModalLabel" aria-hidden="true">
                     <div class="modal-dialog" role="document">
                         <div class="modal-content">
                             <div class="modal-header">
-                                <h5 class="modal-title" id="id_todo_ModalLabel">Update</h5>
+                                <h5 class="modal-title" id="id_todo_ModalLabel{{ todo.id }}">Update</h5>
                                 <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                                     <span aria-hidden="true">&times;</span>
                                 </button>
@@ -29,18 +28,18 @@
                                 <form method="post" action="{% url 'todoList:update' todo.id %}">
                                     {% csrf_token %}
                                     <div class="form-group">
-                                        <label for="id_todo_title">제목</label>
+                                        <label for="id_todo_title_m{{ todo.id }}">제목</label>
                                         <input class="form-control" type="text" name="todo_title" maxlength="20"
-                                               id="id_todo_title" required value="{{ todo.todo_title }}">
+                                               id="id_todo_title_m{{ todo.id }}" required value="{{ todo.todo_title }}">
                                     </div>
                                     <div class="form-group">
-                                        <label for="id_todo_detail">내용</label>
+                                        <label for="id_todo_detail_m{{ todo.id }}">내용</label>
                                         <textarea class="form-control" name="todo_detail" rows="10"
-                                                  id="id_todo_detail">{{ todo.todo_detail }}</textarea>
+                                                  id="id_todo_detail_m{{ todo.id }}">{{ todo.todo_detail }}</textarea>
                                     </div>
                                     <div class="form-group">
-                                        <label for="id_todo_due_date">마감기한</label>
-                                        <input class="form-control" type="datetime-local" id="id_todo_due_date"
+                                        <label for="id_todo_due_date_m{{ todo.id }}">마감기한</label>
+                                        <input class="form-control" type="datetime-local" id="id_todo_due_date_m{{ todo.id }}"
                                                name="todo_due_date" min="{{ todayDate }}"
                                                value="{{ todo.todo_due_date }}"/>
                                     </div>
