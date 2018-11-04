@@ -2,13 +2,6 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="eb515570-0114-40a2-b845-6b1c8054d4b2" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/todoList/templates/todo/todoPassedList.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/db.sqlite3" beforeDir="false" afterPath="$PROJECT_DIR$/db.sqlite3" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/todoList/templates/todo/base.html" beforeDir="false" afterPath="$PROJECT_DIR$/todoList/templates/todo/base.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/todoList/templates/todo/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/todoList/templates/todo/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/todoList/templates/todo/todoCompleteList.html" beforeDir="false" afterPath="$PROJECT_DIR$/todoList/templates/todo/todoCompleteList.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/todoList/templates/todo/todoList.html" beforeDir="false" afterPath="$PROJECT_DIR$/todoList/templates/todo/todoList.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/todoList/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/todoList/views.py" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -63,25 +56,25 @@
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
           <entry key="html" value="3248" />
-          <entry key="py" value="3837" />
+          <entry key="py" value="4004" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
           <entry key="HTML" value="3248" />
-          <entry key="Python" value="3837" />
+          <entry key="Python" value="4004" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.open">
         <counts>
           <entry key="html" value="27" />
-          <entry key="py" value="11" />
+          <entry key="py" value="12" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.open">
         <counts>
           <entry key="HTML" value="27" />
-          <entry key="Python" value="11" />
+          <entry key="Python" value="12" />
         </counts>
       </usages-collector>
     </session>
@@ -91,8 +84,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/todoList/templates/todo/todoPassedList.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="133">
-              <caret line="7" column="19" selection-start-line="7" selection-start-column="19" selection-end-line="7" selection-end-column="19" />
+            <state relative-caret-position="285">
+              <caret line="15" column="29" lean-forward="true" selection-start-line="15" selection-start-column="29" selection-end-line="15" selection-end-column="29" />
             </state>
           </provider>
         </entry>
@@ -115,11 +108,23 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/todoList/templates/todo/detail.html">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="228">
               <caret line="12" column="14" lean-forward="true" selection-start-line="12" selection-start-column="14" selection-end-line="12" selection-end-column="14" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/todoList/views.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="361">
+              <caret line="25" column="110" selection-start-line="25" selection-start-column="110" selection-end-line="25" selection-end-column="110" />
+              <folding>
+                <element signature="e#0#54#0" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -161,10 +166,10 @@
         <option value="$PROJECT_DIR$/todoList/forms.py" />
         <option value="$PROJECT_DIR$/todoList/templates/todo/index.html" />
         <option value="$PROJECT_DIR$/todoList/templates/todo/base.html" />
-        <option value="$PROJECT_DIR$/todoList/views.py" />
         <option value="$PROJECT_DIR$/todoList/templates/todo/todoPassedList.html" />
         <option value="$PROJECT_DIR$/todoList/templates/todo/todoCompleteList.html" />
         <option value="$PROJECT_DIR$/todoList/templates/todo/todoList.html" />
+        <option value="$PROJECT_DIR$/todoList/views.py" />
       </list>
     </option>
   </component>
@@ -255,7 +260,7 @@
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.13539445" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.13539445" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
@@ -266,7 +271,7 @@
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="6" />
       <window_info anchor="bottom" id="Version Control" order="7" show_stripe_button="false" />
-      <window_info active="true" anchor="bottom" id="Terminal" order="8" visible="true" weight="0.32899022" />
+      <window_info anchor="bottom" id="Terminal" order="8" visible="true" weight="0.32899022" />
       <window_info anchor="bottom" id="Event Log" order="9" side_tool="true" />
       <window_info anchor="bottom" id="Python Console" order="10" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
@@ -333,16 +338,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/todoList/views.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="114">
-          <caret line="21" column="50" selection-start-line="21" selection-start-column="50" selection-end-line="21" selection-end-column="50" />
-          <folding>
-            <element signature="e#0#54#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/todoList/templates/todo/addTodo.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="323">
@@ -368,13 +363,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/todoList/templates/todo/todoPassedList.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="133">
-          <caret line="7" column="19" selection-start-line="7" selection-start-column="19" selection-end-line="7" selection-end-column="19" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/todoList/templates/todo/todoCompleteList.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="133">
@@ -393,6 +381,23 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="228">
           <caret line="12" column="14" lean-forward="true" selection-start-line="12" selection-start-column="14" selection-end-line="12" selection-end-column="14" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/todoList/templates/todo/todoPassedList.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="285">
+          <caret line="15" column="29" lean-forward="true" selection-start-line="15" selection-start-column="29" selection-end-line="15" selection-end-column="29" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/todoList/views.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="361">
+          <caret line="25" column="110" selection-start-line="25" selection-start-column="110" selection-end-line="25" selection-end-column="110" />
+          <folding>
+            <element signature="e#0#54#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>

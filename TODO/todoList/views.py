@@ -8,6 +8,8 @@ from datetime import datetime, timedelta
 from .models import Todo
 from .forms import TodoForm
 
+from django.db.models import Q
+
 # Create your views here.
 def index(request):
     if request.method == 'POST':
@@ -21,7 +23,7 @@ def index(request):
     todayDate_m = datetime.today() - timedelta(days=1)
     todayDate_m = todayDate_m.strftime('%Y-%m-%d')
 
-    todoList = Todo.objects.filter(todo_is_complete=False, todo_due_date__range=[todayDate, '5000-12-31'])
+    todoList = Todo.objects.filter(Q(todo_due_date__range=[todayDate, '5000-12-31']) | Q(todo_due_date=None), todo_is_complete=False)
     todoListLen = len(todoList)
 
     todoCompleteList = Todo.objects.filter(todo_is_complete=True)
