@@ -1,13 +1,13 @@
 <div class="col">
-<h2 class="text-center">TODO</h2>
+<h2 class="text-center">Complete</h2>
 <div class="col todoList-style">
-    {% for todo in todoList %}
-    <div class="card">
+    {% for todo in todoCompleteList %}
+    <div class="card text-white bg-secondary">
         <div class="card-body">
             <h5 class="card-title">{{ todo.todo_title }}</h5>
             <p class="card-text">{{ todo.todo_detail }}</p>
             <div class="text-right">
-                <a class="btn btn-success" href="{% url 'todoList:complete' todo.id %}">완료</a>
+                <a class="btn btn-warning" href="{% url 'todoList:cancel' todo.id %}">완료취소</a>
                 <a class="btn btn-info" href="{% url 'todoList:detail' todo.id %}">상세보기</a>
                 <a class="btn btn-danger" href="{% url 'todoList:delete' todo.id %}">삭제</a>
             </div>

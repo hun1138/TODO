@@ -23,7 +23,7 @@ class TodoForm(forms.ModelForm):
         widgets = {
             'todo_title': forms.TextInput(attrs={'class': 'form-control'}),
             'todo_detail': forms.Textarea(attrs={'class': 'form-control', 'rows': 10}),
-            'todo_due_date': forms.DateTimeInput(attrs={'type':'datetime-local', 'class': 'form-control', 'value': todayDate, 'min': todayDate}),
+            'todo_due_date': forms.DateTimeInput(attrs={'type':'datetime-local', 'class': 'form-control', 'min': todayDate}),
         }
         error_messages = {
             'todo_title': {
