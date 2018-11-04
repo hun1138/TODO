@@ -21,12 +21,14 @@ def index(request):
 
     todoList = Todo.objects.filter(todo_is_complete=False)
     todoCompleteList = Todo.objects.filter(todo_is_complete=True)
-    todoLen = len(todoList)
+    todoListLen = len(todoList)
+    todoCompleteListLen = len(todoCompleteList)
     context = {
         'todoForm':todoForm,
         'todoList':todoList,
         'todoCompleteList': todoCompleteList,
-        'todoLen':todoLen,
+        'todoListLen':todoListLen,
+        'todoCompleteListLen': todoCompleteListLen,
     }
     return render(request, 'todo/index.html', context)
 
