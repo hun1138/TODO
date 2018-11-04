@@ -4,18 +4,23 @@
         {% for todo in todoList %}
         <div class="card">
             <div class="card-body">
+                {% if todo.todo_due_date != None %}
+                <h6>Due Date {{ todo.todo_due_date|date:'Y-m-d' }}</h6>
+                {% endif %}
                 <h5 class="card-title">{{ todo.todo_title }}</h5>
                 <p class="card-text">{{ todo.todo_detail }}</p>
                 <div class="text-right">
                     <a class="btn btn-success" href="{% url 'todoList:complete' todo.id %}">완료</a>
-                    <button type="button" class="btn btn-info" data-toggle="modal" data-target="#todoUpdateModal{{ todo.id }}">
+                    <button type="button" class="btn btn-info" data-toggle="modal"
+                            data-target="#todoUpdateModal{{ todo.id }}">
                         수정
                     </button>
                     <a class="btn btn-danger" href="{% url 'todoList:delete' todo.id %}">삭제</a>
                 </div>
 
                 <!-- Modal -->
-                <div class="modal fade" id="todoUpdateModal{{ todo.id }}" tabindex="-1" role="dialog" aria-labelledby="id_todo_ModalLabel" aria-hidden="true">
+                <div class="modal fade" id="todoUpdateModal{{ todo.id }}" tabindex="-1" role="dialog"
+                     aria-labelledby="id_todo_ModalLabel" aria-hidden="true">
                     <div class="modal-dialog" role="document">
                         <div class="modal-content">
                             <div class="modal-header">

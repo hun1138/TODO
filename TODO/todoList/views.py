@@ -3,7 +3,7 @@ from django.views import generic
 from django.http import HttpResponseRedirect
 from django.urls import reverse
 
-import datetime
+from datetime import datetime, timedelta
 
 from .models import Todo
 from .forms import TodoForm
@@ -17,18 +17,27 @@ def index(request):
     else:
         todoForm = TodoForm()
 
-    todoList = Todo.objects.filter(todo_is_complete=False)
-    todoCompleteList = Todo.objects.filter(todo_is_complete=True)
+    todayDate = datetime.now().strftime('%Y-%m-%d')
+    todayDate_m = datetime.today() - timedelta(days=1)
+    todayDate_m = todayDate_m.strftime('%Y-%m-%d')
+
+    todoList = Todo.objects.filter(todo_is_complete=False, todo_due_date__range=[todayDate, '5000-12-31'])
     todoListLen = len(todoList)
+
+    todoCompleteList = Todo.objects.filter(todo_is_complete=True)
     todoCompleteListLen = len(todoCompleteList)
-    todayDate = datetime.datetime.now().strftime('%Y-%m-%d')
+
+    todoPassedList = Todo.objects.filter(todo_is_complete=False, todo_due_date__range=['1000-01-01', todayDate_m])
+    todoPassedListLen = len(todoPassedList)
     context = {
         'todoForm':todoForm,
-        'todoList':todoList,
-        'todoCompleteList': todoCompleteList,
-        'todoListLen':todoListLen,
-        'todoCompleteListLen': todoCompleteListLen,
         'todayDate': todayDate,
+        'todoList':todoList,
+        'todoListLen': todoListLen,
+        'todoCompleteList': todoCompleteList,
+        'todoCompleteListLen': todoCompleteListLen,
+        'todoPassedList': todoPassedList,
+        'todoPassedListLen': todoPassedListLen,
     }
     return render(request, 'todo/index.html', context)
 
