@@ -9,7 +9,7 @@
 ### Windows
 	https://www.python.org/
 ### Linux
-	https://www.python.org/
+	sudo apt-get install python3
 
 ## Download Django
 ### Check Django Version
