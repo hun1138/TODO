@@ -19,5 +19,9 @@
 ### Linux
 	pip install django==2.1.3
 
+## Set Database
+	python manage.py makemigrations
+	python manage.py migrate
+
 ## Run Server
 	python manage.py runserver
