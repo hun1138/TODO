@@ -39,9 +39,9 @@
                                     </div>
                                     <div class="form-group">
                                         <label for="id_todo_due_date_m{{ todo.id }}">마감기한</label>
-                                        <input class="form-control" type="datetime-local" id="id_todo_due_date_m{{ todo.id }}"
+                                        <input class="form-control" type="date" id="id_todo_due_date_m{{ todo.id }}"
                                                name="todo_due_date" min="{{ todayDate }}"
-                                               value="{{ todo.todo_due_date }}"/>
+                                               value="{{ todo.todo_due_date|date:'Y-m-d' }}"/>
                                     </div>
                                     <div class="text-right">
                                         <button class="btn btn-primary" type="submit">수정</button>

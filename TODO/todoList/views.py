@@ -12,8 +12,6 @@ from .forms import TodoForm
 def index(request):
     if request.method == 'POST':
         todoForm = TodoForm(request.POST)
-        #print(todoForm)
-        print(todoForm.data['todo_due_date'])
         if todoForm.is_valid():
             todoForm.save()
     else:
@@ -23,40 +21,41 @@ def index(request):
     todoCompleteList = Todo.objects.filter(todo_is_complete=True)
     todoListLen = len(todoList)
     todoCompleteListLen = len(todoCompleteList)
+    todayDate = datetime.datetime.now().strftime('%Y-%m-%d')
     context = {
         'todoForm':todoForm,
         'todoList':todoList,
         'todoCompleteList': todoCompleteList,
         'todoListLen':todoListLen,
         'todoCompleteListLen': todoCompleteListLen,
+        'todayDate': todayDate,
     }
     return render(request, 'todo/index.html', context)
 
 def delete(request, todo_id):
-    todo = Todo.objects.get(id=todo_id)
+    todo = get_object_or_404(Todo, id=todo_id)
     todo.delete()
     return HttpResponseRedirect(reverse('todoList:index'))
 
 def complete(request, todo_id):
-    todo = Todo.objects.get(id=todo_id)
+    todo = get_object_or_404(Todo, id=todo_id)
     todo.todo_is_complete = True
     todo.save()
     return HttpResponseRedirect(reverse('todoList:index'))
 
 def cancel(request, todo_id):
-    todo = Todo.objects.get(id=todo_id)
+    todo = get_object_or_404(Todo, id=todo_id)
     todo.todo_is_complete = False
     todo.save()
     return HttpResponseRedirect(reverse('todoList:index'))
 
 def update(request, todo_id):
     if request.method == 'POST':
-        todo = Todo.objects.get(id=todo_id)
-        todo.todo_title = request.POST['todo_title']
-        todo.todo_detail = request.POST['todo_detail']
-        if request.POST['todo_due_date'] == '':
-            todo.todo_due_date = None
-        todo.save()
+        todo = get_object_or_404(Todo, id=todo_id)
+        todoForm = TodoForm(request.POST or None, instance=todo)
+
+        if todoForm.is_valid():
+            todoForm.save()
     return HttpResponseRedirect(reverse('todoList:index'))
 
 class DetailView(generic.DetailView):

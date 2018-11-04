@@ -15,12 +15,11 @@
 
         <div class="form-group">
             <label for="id_todo_due_date">마감기한</label>
-            <input class="form-control" type="datetime-local" id="id_todo_due_date" name="todo_due_date" value="{{ todayDate }}" min="{{ todayDate }}"/>
+            <input class="form-control" type="date" id="id_todo_due_date" name="todo_due_date" value="{{ todayDate }}" min="{{ todayDate }}"/>
         </div>
         -->
 
         {{ todoForm.as_p }}
-        <!-- <input type="date"> -->
         <div class="text-right">
             <button class="btn btn-primary" type="submit">추가</button>
         </div>
