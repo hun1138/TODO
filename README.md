@@ -19,6 +19,11 @@
 ### Linux
 	pip install django==2.1.3
 
+## Set Hosts
+### In settings.py
+	DEBUG = FALSE
+	ALLOWED_HOSTS = ['your_host']
+
 ## Set Database
 	python manage.py makemigrations
 	python manage.py migrate
